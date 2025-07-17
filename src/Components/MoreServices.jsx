@@ -181,38 +181,48 @@ const MoreServices = () => {
         variants={fadeIn("up", 0.3)}
         initial="hidden"
         whileInView="show"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6"
+        className="flex gap-25 flex-wrap justify-center p-6 text-center"
       >
         {serviceData.map((s, index) => {
-          const isLast = index === serviceData.length - 1;
-          const remainder = serviceData.length % 3;
-
-          // Apply centering only if last card is alone in last row (when remainder = 1)
-          const centerClass = isLast && remainder === 1 ? "lg:col-start-2" : "";
-
           return (
             <div
               key={index}
-              className={`card group border-2 border-[#D1D9E0] dark:border-amber-600 w-full h-full p-6 shadow-md shadow-[rgba(0,0,0,0.5)] dark:shadow-[rgba(255,165,0,0.5)] rounded-3xl hover:-translate-y-3 duration-300 transition-all ${centerClass}`}
+              className="card group border-2 border-[#D1D9E0] dark:border-amber-600 lg:w-100 md:w-80 h-100 p-6 shadow-md shadow-[rgba(0,0,0,0.5)] dark:shadow-[rgba(255,165,0,0.5)] rounded-3xl hover:-translate-y-3 duration-300 transition-all"
             >
-              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full text-2xl text-[#ffde01] transition-all duration-300 ease-in-out group-hover:bg-[#ffde01] group-hover:text-black">
-                <span className="scale-125 group-hover:scale-100 transition-all duration-300">
+              <motion.div
+                variants={fadeIn("up", 0.3)}
+                initial="hidden"
+                whileInView="show"
+                className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full text-2xl text-[#ffde01] transition-colors duration-300 ease-in-out group-hover:bg-[#ffde01] group-hover:text-black"
+              >
+                <span className="scale-125 group-hover:scale-100 transition-all duration-300 text-2xl font-bold hover:text-2xl hover:font-bold">
                   {s.icon}
                 </span>
-              </div>
-              <h1>{s.title}</h1>
-              <p className="text-sm text-gray-300 italic mb-2">{s.question}</p>
-              <p className="overflow-auto max-h-50">{s.description}</p>
-              <button
-                className="btn text-black m-auto w-[200px] mt-5 p-3 flex justify-center items-center bg-[#ffde01] rounded-lg border hover:bg-black hover:text-white hover:border-[#ffde01] transition-all duration-300 cursor-pointer"
-                onClick={() => {
-                  setSelectedService(null);
-                  document.getElementById("my_modal_3").showModal();
-                  setSelectedService(s);
-                }}
+              </motion.div>
+              <motion.h1
+                variants={fadeIn("left", 0.3)}
+                initial="hidden"
+                whileInView="show"
+                className="lg:text-2xl md:text-lg"
               >
-                Request a qoute
-              </button>
+                {s.title}
+              </motion.h1>
+              <motion.p
+                variants={fadeIn("right", 0.3)}
+                initial="hidden"
+                whileInView="show"
+                className="text-sm text-gray-300 italic mb-2"
+              >
+                {s.question}
+              </motion.p>
+              <motion.p
+                variants={fadeIn("up", 0.4)}
+                initial="hidden"
+                whileInView="show"
+                className="overflow-auto max-h-50 max-md:mt-10 max-sm:mt-0"
+              >
+                {s.description}
+              </motion.p>
             </div>
           );
         })}

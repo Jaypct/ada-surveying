@@ -25,7 +25,7 @@ html {
 
 @layer components {
   .clip-pentagon {
-    clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
   }
 }
 

@@ -8,34 +8,106 @@ const Hero = () => {
     <section id="home">
       <div className="relative">
         <img src={img} alt="img" className="w-full h-screen object-cover" />
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4">
-          <motion.h1
-            variants={textVariant(0.2)}
+
+        {/* Desktop View */}
+        <div className="absolute top-[50%] z-11 w-auto">
+          <motion.div
+            variants={fadeIn("right", 0.2)}
             initial="hidden"
             whileInView="show"
-            className="text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-xl mb-6 tracking-tight"
+            className="clip-pentagon md:block bg-black/50 lg:w-auto w-180 h-auto hidden"
           >
-            Major Project Milestones
+            <div className="px-30 py-6 z-11 w-250">
+              <motion.h1
+                variants={fadeIn("up", 0.4)}
+                initial="hidden"
+                whileInView="show"
+                className="lg:text-6xl md:text-5xl font-bold text-[#ffde01] "
+              >
+                Land Surveying Services
+              </motion.h1>
+              <motion.p
+                variants={fadeIn("up", 0.4)}
+                initial="hidden"
+                whileInView="show"
+                className="lg:text-2xl md:text-xl mt-10 text-black lg:w-auto w-120 dark:text-white"
+              >
+                Delivering accurate and dependable surveying solutions for
+                seamless project execution and development.
+              </motion.p>
+
+              <motion.a
+                variants={fadeIn("up", 0.5)}
+                initial="hidden"
+                whileInView="show"
+                href="#about"
+                className="mt-10
+                       px-8 py-3 rounded-2xl
+                       bg-transparent text-[#ffde01] font-semibold
+                       border-2 border-[#ffde01]
+                       hover:bg-[#ffde01] hover:text-black
+                       transition-colors duration-300
+                       shadow-md
+                       focus:outline-none focus:ring-4 focus:ring-yellow-300
+                       flex items-center gap-3 w-[50%]"
+              >
+                <span className="flex items-center gap-2">
+                  Learn More
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* phone view */}
+        <div className="block md:hidden absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+          <motion.h1
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            whileInView="show"
+            className="sm:text-3xl font-bold text-[#ffde01] w-auto"
+          >
+            Land Surveying Services
           </motion.h1>
           <motion.p
-            variants={textVariant(0.3)}
+            variants={fadeIn("up", 0.4)}
             initial="hidden"
             whileInView="show"
-            className="text-base md:text-2xl text-white text-center max-w-xl mb-6 mt-2 drop-shadow-lg font-light opacity-70"
+            className="mt-10 text-black sm:text-xl font-bold dark:text-white"
           >
             Delivering accurate and dependable surveying solutions for seamless
             project execution and development.
           </motion.p>
           <motion.a
-            variants={textVariant(0.4)}
+            variants={fadeIn("up", 0.5)}
             initial="hidden"
             whileInView="show"
             href="#about"
-            className="mt-4 px-8 py-3 rounded-2xl bg-[#ffde01] text-black font-bold shadow-lg hover:bg-yellow-400 hover:text-white transition-colors duration-300 text-lg border border-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 flex items-center gap-3"
+            className="mt-10
+                       px-8 py-3 rounded-2xl
+                       bg-transparent text-[#ffde01] font-semibold
+                       border-2 border-[#ffde01]
+                       hover:bg-[#ffde01] hover:text-black
+                       transition-colors duration-300
+                       shadow-md
+                       focus:outline-none focus:ring-4 focus:ring-yellow-300
+                       flex items-center gap-3 w-[50%]"
           >
             <span className="flex items-center gap-2">
-              Learn More
+              Learn More
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -47,7 +119,7 @@ const Hero = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
+                />
               </svg>
             </span>
           </motion.a>
@@ -58,3 +130,46 @@ const Hero = () => {
 };
 
 export default Hero;
+// <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4">
+//   <motion.h1
+//     variants={textVariant(0.2)}
+//     initial="hidden"
+//     whileInView="show"
+//     className="text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-xl mb-6 tracking-tight"
+//   >
+//     Major Project Milestones
+//   </motion.h1>
+//   <motion.p
+//     variants={textVariant(0.3)}
+//     initial="hidden"
+//     whileInView="show"
+//     className="text-base md:text-2xl text-white text-center max-w-xl mb-6 mt-2 drop-shadow-lg font-light opacity-70"
+//   >
+//     Delivering accurate and dependable surveying solutions for seamless
+//     project execution and development.
+//   </motion.p>
+//   <motion.a
+//     variants={textVariant(0.4)}
+//     initial="hidden"
+//     whileInView="show"
+//     href="#about"
+//     className="mt-4 px-8 py-3 rounded-2xl bg-[#ffde01] text-black font-bold shadow-lg hover:bg-yellow-400 hover:text-white transition-colors duration-300 text-lg border border-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 flex items-center gap-3"
+//   >
+//     <span className="flex items-center gap-2">
+//       Learn More
+//       <svg
+//         className="w-6 h-6"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         viewBox="0 0 24 24"
+//       >
+//         <path
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//           d="M17 8l4 4m0 0l-4 4m4-4H3"
+//         ></path>
+//       </svg>
+//     </span>
+//   </motion.a>
+// </div>

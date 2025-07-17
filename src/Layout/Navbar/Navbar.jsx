@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/imgHero/logo.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/motion";
@@ -32,13 +32,13 @@ const Navbar = () => {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.1,
+        threshold: 0.3,
       }
     );
 
     const observedSections = [];
 
-    const tryObserveSections = () => {
+    const observeSections = () => {
       navLinks.forEach((link) => {
         const section = document.querySelector(link.href);
         if (section) {
@@ -48,14 +48,16 @@ const Navbar = () => {
       });
     };
 
-    // Delay to ensure DOM elements are present
-    const timeoutId = setTimeout(tryObserveSections, 100); // tweak timing if needed
+    observeSections();
+
+    // Also try re-observing after short delay (for SPA re-rendering)
+    const retryId = setTimeout(observeSections, 500);
 
     return () => {
-      clearTimeout(timeoutId);
+      clearTimeout(retryId);
       observedSections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+  }, [window.location.pathname]); // re-run when navigating between routes
 
   return (
     <motion.nav
@@ -86,9 +88,9 @@ const Navbar = () => {
           className="md:hidden text-white focus:outline-none"
         >
           {isMenuOpen ? (
-            <HiX className="w-7 h-7" />
+            <HiX className="w-7 h-7 text-black dark:text-white" />
           ) : (
-            <HiMenu className="w-7 h-7" />
+            <HiMenu className="w-7 h-7 text-black dark:text-white" />
           )}
         </button>
 

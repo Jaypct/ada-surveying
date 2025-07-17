@@ -86,7 +86,7 @@ const locations = [
 
 export default function MapComponent() {
   return (
-    <div className="w-full h-[700px] md:w-1/2 lg:h-[600px] rounded-lg shadow-md overflow-hidden">
+    <div className="sm:w-3/4 md:w-1/2  h-[600px] rounded-lg shadow-md overflow-hidden">
       <MapContainer
         center={[12.8797, 121.774]}
         zoom={6}

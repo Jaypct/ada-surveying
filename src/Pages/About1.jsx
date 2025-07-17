@@ -14,7 +14,7 @@ const About = () => {
         variants={fadeIn("right", 0.5)}
         initial="hidden"
         whileInView="show"
-        className="relative w-full lg:w-1/2 min-h-[300px] md:min-h-0 flex items-stretch"
+        className="relative w-full lg:w-1/2 min-h-[300px] max-md:mt-20 md:min-h-0 flex items-stretch"
       >
         <img
           src={aboutImg}
@@ -37,7 +37,7 @@ const About = () => {
             variants={textVariant(0.3)}
             initial="hidden"
             whileInView="show"
-            className="text-3xl md:text-4xl font-bold mb-2 text-black dark:text-white text-center"
+            className="text-3xl md:text-4xl md:mt-5 font-bold mb-2 text-black dark:text-white text-center"
           >
             About Us
           </motion.h1>

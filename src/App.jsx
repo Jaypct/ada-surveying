@@ -22,6 +22,7 @@ const App = () => {
           path="/more-services"
           element={
             <Layout>
+              <ScrollToTop />
               <MoreServices />
             </Layout>
           }
