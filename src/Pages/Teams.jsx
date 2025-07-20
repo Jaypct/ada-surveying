@@ -24,7 +24,7 @@ const Teams = () => {
       name: "Engr. Agustini D. Amar",
       designation: "Founder",
       license: "PRC Reg. No.: 0011102",
-      description: `Engr. Agustini D. Amar Jr. is the founder and principal geodetic engineer of ADA Surveying Services. He completed his Bachelor of Science degree in Geodetic Engineering at the University of the Philippines – Diliman, a notable institution recognized for academic and technical excellence. He earned his professional license from the Professional Regulation Commission (PRC) in 2021 and is an active member of the Geodetic Engineers of the Philippines (GEP), particularly within Region VI.
+      description: `     Engr. Agustini D. Amar Jr. is the founder and principal geodetic engineer of ADA Surveying Services. He completed his Bachelor of Science degree in Geodetic Engineering at the University of the Philippines – Diliman, a notable institution recognized for academic and technical excellence. He earned his professional license from the Professional Regulation Commission (PRC) in 2021 and is an active member of the Geodetic Engineers of the Philippines (GEP), particularly within Region VI.
 
 Engr. Amar specializes in a wide range of geospatial and land surveying services, with core expertise in land surveys, topographic mapping, and engineering surveys. His professional experience includes complex subdivision projects, land titling, and survey documentation for regulatory approvals involving various government agencies. He has also been involved in large-scale projects supporting the renewable energy sector, where accuracy, continuity, and coordination across expansive areas are essential. In addition, he has extensive experience in industrial surveys, boundary and cadastral assessments, and GIS-based mapping—delivering data-driven insights that support planning, development, and compliance.
 
@@ -38,7 +38,7 @@ With a strong commitment to precision, regulatory adherence, and technical integ
       linkedinLink: "https://www.linkedin.com",
       name: "Nirabelle P. Dionela",
       designation: "Administrative Officer",
-      description: `Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
+      description: `     Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
     
     Known for her analytical thinking and strong sense of initiative, Ms. Dionela has proven to be an effective support figure within the team. She is involved in data processing, report generation, and the preparation of survey documentation, playing a quiet yet essential role in the technical and operational workflow.
     
@@ -52,7 +52,7 @@ With a strong commitment to precision, regulatory adherence, and technical integ
       linkedinLink: "https://www.linkedin.com",
       name: "Mohammed S. Sahi",
       designation: "Lead CAD Operator",
-      description: `Mohammed S. Sahi joined the company in January 2024 and currently serves as the Lead CAD Operator, where he is responsible for managing and producing technical drawings and documentation for various surveying and mapping projects. His role plays a crucial part in translating field data into precise and detailed visual outputs. He is actively involved in client communications, regularly presenting CAD drawings and clarifying technical aspects of project deliverables. In addition, he ensures that all outputs comply with industry standards and project specifications, contributing to the overall quality and integrity of the company’s deliverables.
+      description: `     Mohammed S. Sahi joined the company in January 2024 and currently serves as the Lead CAD Operator, where he is responsible for managing and producing technical drawings and documentation for various surveying and mapping projects. His role plays a crucial part in translating field data into precise and detailed visual outputs. He is actively involved in client communications, regularly presenting CAD drawings and clarifying technical aspects of project deliverables. In addition, he ensures that all outputs comply with industry standards and project specifications, contributing to the overall quality and integrity of the company’s deliverables.
     
     Known for his technical proficiency, problem-solving ability, and analytical mindset, Mr. Sahi excels in using Autodesk Civil3D, where he demonstrates expert-level proficiency. His day-to-day work includes drafting, digitizing existing plans, and maintaining the accuracy and regulatory compliance of all CAD outputs—ensuring that every design aligns with the project's technical and spatial requirements.
     
@@ -66,7 +66,7 @@ With a strong commitment to precision, regulatory adherence, and technical integ
       linkedinLink: "https://www.linkedin.com",
       name: "Marc Aronne Siason",
       designation: "Lead Instrument Man",
-      description: `Marc Aronne Siason joined the company in September 2024 and currently holds the position of Administrative Assistant. As part of the technical and operations team, they support a range of responsibilities that include managing day-to-day office operations, coordinating with clients to ensure that requirements are met, and assisting in the mobilization and deployment of field teams.  
+      description: `     Marc Aronne Siason joined the company in September 2024 and currently holds the position of Administrative Assistant. As part of the technical and operations team, they support a range of responsibilities that include managing day-to-day office operations, coordinating with clients to ensure that requirements are met, and assisting in the mobilization and deployment of field teams.  
     
     He demonstrate strong personal strengths such as initiative, analytical thinking, and leadership. Although primarily in an administrative role, they are familiar with survey equipment such as UAVs, Total Stations, RTK, and Echo Sounders, and have a working knowledge of software tools like CAD, GIS, and other data processing applications, with a proficiency level ranging from intermediate to expert. Task often involve data processing, report preparation, and assisting in the compilation of survey documentation. While not a field surveyor by title, they have been actively involved in survey projects including Subdivision, Topographic, and Relocation surveys across various geographic locations such as Cebu, Tarlac, Batangas, Iloilo, Guimaras, Escalante, Silay, Talisay, Cadiz, Victorias, Bacolod, and Calbayog, Samar. This exposure has contributed significantly to their technical understanding and operational efficiency. 
 
@@ -80,11 +80,11 @@ With a strong commitment to precision, regulatory adherence, and technical integ
       linkedinLink: "https://www.linkedin.com",
       name: "Kyle Jacobe Suriaga",
       designation: "Survey Aide",
-      description: `Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
-    
-    Known for her analytical thinking and strong sense of initiative, Ms. Dionela has proven to be an effective support figure within the team. She is involved in data processing, report generation, and the preparation of survey documentation, playing a quiet yet essential role in the technical and operational workflow.
-    
-   She earned her Bachelor of Science degree in Computer Science from Silay Institute Inc. in Silay City, Negros Occidental, and graduated in 2024 with distinction as a Cum Laude and a consistent Dean’s Lister, demonstrating a strong academic foundation and a commitment to excellence that she now brings to her professional work. `,
+      description: `     Kyle Jacobe Suriaga joined ADA Surveying Services as a Survey Aide on January 7, 2024, and quickly became vital to the field operations team. He ensures efficient surveying activities by securing equipment, supporting task execution, and maintaining organised work environments both on-site and in the office.
+
+     His duties include updating administrative staff on project progress, handling RTK and Total Station equipment, and performing office maintenance. His experience in topographic surveys, relocation projects, and as-built documentation has enriched the team's capabilities.
+
+     Kyle has contributed to projects in Tarlac, Batangas, Cebu, Cagayan de Oro, Iloilo, and Samar, showcasing adaptability and commitment to quality. He completed his Senior High School at Doña Monserrat Lopez Memorial High School, building a strong foundation for his technical proficiency in surveying. `,
     },
     {
       id: 6,
@@ -94,11 +94,11 @@ With a strong commitment to precision, regulatory adherence, and technical integ
       linkedinLink: "https://www.linkedin.com",
       name: "Kierwin Key Alba",
       designation: "Survey Aide",
-      description: `Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
-    
-    Known for her analytical thinking and strong sense of initiative, Ms. Dionela has proven to be an effective support figure within the team. She is involved in data processing, report generation, and the preparation of survey documentation, playing a quiet yet essential role in the technical and operational workflow.
-    
-   She earned her Bachelor of Science degree in Computer Science from Silay Institute Inc. in Silay City, Negros Occidental, and graduated in 2024 with distinction as a Cum Laude and a consistent Dean’s Lister, demonstrating a strong academic foundation and a commitment to excellence that she now brings to her professional work. `,
+      description: `     Kierwin Key Alba joined ADA Surveying Services as a Survey Aide in 2025, bringing a strong foundation in surveying and technical skills to the field operations team. He ensures efficient surveying activities by securing equipment, supporting task execution, and maintaining organised work environments both on-site and in the office.
+
+     His duties include handling RTK and Total Station equipment, providing crucial support during field operations, and adapting to different project requirements with respect for diverse opinions and skills. His field experience spans subdivision, topographic, and bathymetric surveys, showcasing adaptability, work ethic, emotional intelligence, and strong team collaboration.
+
+     Kierwin Key Alba has contributed to projects in Cebu, Talisay City, Cadiz City, and Bacolod City, demonstrating commitment to quality and precision in every task. He earned his Bachelor of Science in Industrial Technology from Carlos Hilado Memorial State University, Talisay City, graduating in 2025, further strengthening his technical expertise in the field.`,
     },
 
     {
@@ -109,7 +109,7 @@ With a strong commitment to precision, regulatory adherence, and technical integ
       linkedinLink: "https://www.linkedin.com",
       name: "Joshua R. Sibongga",
       designation: "Survey Aide",
-      description: `Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
+      description: `     Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
     
     Known for her analytical thinking and strong sense of initiative, Ms. Dionela has proven to be an effective support figure within the team. She is involved in data processing, report generation, and the preparation of survey documentation, playing a quiet yet essential role in the technical and operational workflow.
     

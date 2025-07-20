@@ -1,131 +1,120 @@
 import React, { useState } from "react";
 import img from "../assets/works/samar1.png";
-import gomezImage from "../assets/works/gomez.png";
+import lunaImage2 from "../assets/works/luna2.png";
+import lunaImage3 from "../assets/works/luna3.png";
 import gomezImage2 from "../assets/works/gomez2.png";
 import gomezImage3 from "../assets/works/gomez3.png";
-import samarImage from "../assets/works/samar1.png";
 import samarImage2 from "../assets/works/samar2.png";
 import samarImage3 from "../assets/works/samar3.png";
+import veriimage from "../assets/works/veri.png";
+import topoimage from "../assets/works/topo.png";
+import alignmentimage from "../assets/works/alignment.png";
+import controlimage from "../assets/works/control.png";
+import hydroimage from "../assets/works/hydro.png";
+import viciimage from "../assets/works/vici.png";
+import roadimage from "../assets/works/road.png";
+import denrimage from "../assets/works/denr.png";
+import subimage from "../assets/works/sub.png";
+import asbimage from "../assets/works/asb.jpeg";
+import caimage from "../assets/works/caap.jpg";
+
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const Works = () => {
   const worksData = [
     {
-      image: gomezImage,
-      image2: gomezImage2,
-      image3: gomezImage3,
+      image: veriimage,
+      image2: lunaImage2,
+      image3: lunaImage3,
       title: "Relocation - Segregation Survey",
-      subtitle: "BRGY. LUNA",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      subtitle: "CADIZ CITY",
+      description: "This is a description for the selected work.",
     },
     {
-      image: gomezImage,
+      image: subimage,
       image2: gomezImage2,
       image3: gomezImage3,
       title: "Subdivision/Consilidation Survey",
-      subtitle: "GOMEZ STREET SILAY CITY",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      subtitle: "BACOLOD CITY",
+      description: "This is a description for the selected work.",
     },
     {
-      image: samarImage,
+      image: denrimage,
       image2: samarImage2,
       image3: samarImage3,
       title: "Verification Survey",
       subtitle: "SAMAR (GWEC)",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: topoimage,
       image2: img,
       image3: img,
       title: "Topographic Survey",
-      subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      subtitle: "SAGAY CITY",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: asbimage,
       title: "As-Built Survey",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: hydroimage,
       title: "Hydrographic Survey",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: roadimage,
       title: "Engineering and Specialized Survey",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: alignmentimage,
       title: "Construction and Alignment Survey",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: caimage,
       title: "CAAP Height Clearance & Obstacle Limitation Assistance",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: denrimage,
       title: "Survey Plan Approval & Titling Assistance",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
     {
-      image: img,
+      image: viciimage,
       title: "Vicinity & Location Mapping",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
-
     {
       image: img,
       title: "Drone Surveying & GIS Mapping",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
-
     {
-      image: img,
+      image: controlimage,
       title: "Control Station Establishment",
       subtitle: "Branding",
-      description:
-        "This is a description for the selected work. You can display more details here.",
+      description: "This is a description for the selected work.",
     },
-  ]; // You can replace this with dynamic images if needed
+  ];
 
   const [selectedWork, setSelectedWork] = useState(null);
+  const [showAllWorks, setShowAllWorks] = useState(false);
 
-  const itemsPerPage = 9;
-  const [currentPage, setCurrentPage] = useState(0);
-
-  const totalPages = Math.ceil(worksData.length / itemsPerPage);
-  const startIndex = currentPage * itemsPerPage;
-  const currentItems = worksData.slice(startIndex, startIndex + itemsPerPage);
-
-  const handlePageChange = (pageIndex) => {
-    setCurrentPage(pageIndex);
-  };
+  const displayedItems = showAllWorks ? worksData : worksData.slice(0, 3);
 
   return (
     <section id="works" className="-scroll-mt-15 p-10 min-h-screen">
@@ -135,20 +124,20 @@ const Works = () => {
         whileInView="show"
         className="text-center mb-10"
       >
-        <h1 className="text-3xl font-bold ">Our Works</h1>
+        <h1 className="text-3xl font-bold">Our Works</h1>
         <p className="text-lg text-black dark:text-white">
           - our awesome works -
         </p>
       </motion.div>
 
-      {/* Responsive Grid of Images */}
+      {/* Grid */}
       <div
         variants={fadeIn("up", 0.3)}
         initial="hidden"
         whileInView="show"
-        className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6"
       >
-        {currentItems.map((work, index) => (
+        {displayedItems.map((work, index) => (
           <div
             key={index}
             className="group w-full max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 relative cursor-pointer"
@@ -157,7 +146,6 @@ const Works = () => {
               document.getElementById("worksModal").showModal();
             }}
           >
-            {/* Image container with TikTok aspect ratio 9:16 */}
             <motion.div
               variants={fadeIn("up", 0.4)}
               initial="hidden"
@@ -169,17 +157,13 @@ const Works = () => {
                 alt={`work-${index}`}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
-
-              {/* Overlay - visible on all screen sizes, positioned bottom with some padding */}
-              <div className="hidden md:block absolute bottom-0 inset-x-0 bg-[rgba(0,0,0,0.6)] text-white p-4 transition-all duration-300 opacity-0 group-hover:opacity-100 text-center">
+              <div className="hidden md:block absolute bottom-0 inset-x-0 bg-[rgba(0,0,0,0.6)] text-white p-4 opacity-0 group-hover:opacity-100 text-center transition-all duration-300">
                 <h3 className="text-[#ffde01] text-base font-semibold">
                   {work.title}
                 </h3>
                 <p className="text-xs">{work.subtitle}</p>
               </div>
             </motion.div>
-
-            {/* Optional: Title below image on small screens (if you want) */}
             <div className="block md:hidden mt-2 text-center">
               <h3 className="text-[#ffde01] text-lg font-semibold">
                 {work.title}
@@ -190,55 +174,50 @@ const Works = () => {
         ))}
       </div>
 
-      {/* Pagination */}
-      <div className="flex justify-center mt-4">
-        <div className="join">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              className={`join-item btn w-10 h-10 text-center rounded-sm transition-all duration-300 border border-gray-300 ${
-                currentPage === index
-                  ? "bg-[#ffde01] text-black font-semibold"
-                  : "bg-white text-gray-700 hover:bg-gray-200"
-              }`}
-              onClick={() => handlePageChange(index)}
-            >
-              {index + 1}
-            </button>
-          ))}
+      {/* View More / View Less Button */}
+      {worksData.length > 3 && (
+        <div className="flex justify-center mt-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => setShowAllWorks((prev) => !prev)}
+            className="bg-[#ffde01] text-black text-base font-semibold px-6 py-3 rounded-[10px] hover:bg-yellow-400 transition-all duration-300"
+          >
+            {showAllWorks ? "View Less" : "View More"}
+          </motion.button>
         </div>
-      </div>
+      )}
 
       {/* Modal */}
       <dialog id="worksModal" className="modal">
         <div className="modal-box w-full max-w-3xl overflow-y-auto max-h-[80vh]">
-          {/* Content */}
           <div className="text-center">
             <h3 className="font-bold text-lg mb-2">{selectedWork?.title}</h3>
             <p className="py-2">{selectedWork?.subtitle}</p>
             <p className="pb-4">{selectedWork?.description}</p>
           </div>
-
-          {/* Images */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center">
-            <img
-              src={selectedWork?.image}
-              alt="work"
-              style={{ display: selectedWork?.image ? "block" : "none" }}
-              className="w-full sm:w-[30%] object-cover rounded-md"
-            />
-            <img
-              src={selectedWork?.image2}
-              alt="work"
-              style={{ display: selectedWork?.image2 ? "block" : "none" }}
-              className="w-full sm:w-[30%] object-cover rounded-md"
-            />
-            <img
-              src={selectedWork?.image3}
-              alt="work"
-              style={{ display: selectedWork?.image3 ? "block" : "none" }}
-              className="w-full sm:w-[30%] object-cover rounded-md"
-            />
+            {selectedWork?.image && (
+              <img
+                src={selectedWork?.image}
+                alt="work"
+                className="w-full sm:w-[30%] object-cover rounded-md"
+              />
+            )}
+            {selectedWork?.image2 && (
+              <img
+                src={selectedWork?.image2}
+                alt="work2"
+                className="w-full sm:w-[30%] object-cover rounded-md"
+              />
+            )}
+            {selectedWork?.image3 && (
+              <img
+                src={selectedWork?.image3}
+                alt="work3"
+                className="w-full sm:w-[30%] object-cover rounded-md"
+              />
+            )}
           </div>
         </div>
         <form method="dialog" className="modal-backdrop">

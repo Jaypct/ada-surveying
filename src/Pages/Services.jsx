@@ -92,7 +92,7 @@ const Services = () => {
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               whileInView="show"
-              className="overflow-auto max-h-50"
+              className="overflow-auto max-h-50 text-sm mt-10"
             >
               {s.description}
             </motion.p>

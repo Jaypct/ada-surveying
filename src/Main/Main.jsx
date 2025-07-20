@@ -10,23 +10,23 @@ const Main = () => {
   // Simple fade-in animation for each section
 
   return (
-    <div className="slider-container w-full m-auto overflow-x-hidden">
+    <div className="slider-container w-full m-auto overflow-x-hidden md:p-30">
       <section className="min-h-screen">
         <Hero />
       </section>
-      <section className="min-h-screen md:p-30">
+      <section className="min-h-screen ">
         <About />
       </section>
-      <section className="min-h-screen md:p-30">
+      <section className="min-h-screen ">
         <Services />
       </section>
-      <section className="min-h-screen md:p-30">
+      <section className="min-h-screen ">
         <Works />
       </section>
-      <section className="min-h-screen md:p-30">
+      <section className="min-h-screen ">
         <Teams />
       </section>
-      <section className="min-h-screen md:p-30">
+      <section className="min-h-screen ">
         <Contact />
       </section>
     </div>
