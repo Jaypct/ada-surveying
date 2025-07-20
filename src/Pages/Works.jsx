@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import img from "../assets/works/samar1.png";
-import lunaImage2 from "../assets/works/luna2.png";
-import lunaImage3 from "../assets/works/luna3.png";
 import gomezImage2 from "../assets/works/gomez2.png";
 import gomezImage3 from "../assets/works/gomez3.png";
 import samarImage2 from "../assets/works/samar2.png";
@@ -25,8 +23,8 @@ const Works = () => {
   const worksData = [
     {
       image: veriimage,
-      image2: lunaImage2,
-      image3: lunaImage3,
+      image2: topoimage,
+      image3: topoimage,
       title: "Relocation - Segregation Survey",
       subtitle: "CADIZ CITY",
       description: "This is a description for the selected work.",
