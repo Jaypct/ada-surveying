@@ -192,7 +192,7 @@ const Contact = () => {
         variants={fadeIn("up", 0.4)}
         initial="hidden"
         whileInView="show"
-        className="flex flex-col md:flex-row gap-10 justify-center text-center mt-20"
+        className="flex flex-col md:flex-row gap-10 justify-center text-center"
       >
         <div className="flex flex-col items-center">
           <CiMail className="w-10 h-10 mb-2" />
