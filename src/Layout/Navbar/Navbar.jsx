@@ -5,9 +5,15 @@ import logo from "../../assets/imgHero/logo.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/motion";
 
-const Navbar = () => {
+const Navbar = ({ externalActiveLink }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
+
+  useEffect(() => {
+    if (externalActiveLink) {
+      setActiveLink(externalActiveLink);
+    }
+  }, [externalActiveLink]);
 
   const navLinks = [
     { href: "#home", label: "Home" },

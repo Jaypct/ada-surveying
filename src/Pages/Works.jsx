@@ -15,9 +15,18 @@ import denrimage from "../assets/works/denr.png";
 import subimage from "../assets/works/sub.png";
 import asbimage from "../assets/works/asb.jpeg";
 import caimage from "../assets/works/caap.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
+import { div } from "framer-motion/m";
 
 const Works = () => {
   const worksData = [
@@ -109,10 +118,7 @@ const Works = () => {
     },
   ];
 
-  const [selectedWork, setSelectedWork] = useState(null);
-  const [showAllWorks, setShowAllWorks] = useState(false);
-
-  const displayedItems = showAllWorks ? worksData : worksData.slice(0, 3);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <section id="works" className="-scroll-mt-15 p-10 min-h-screen">
@@ -123,105 +129,69 @@ const Works = () => {
         className="text-center mb-10"
       >
         <h1 className="text-3xl font-bold">Our Works</h1>
-        <p className="text-lg text-black dark:text-white">
+        <p className="text-lg text-black dark:text-white mb-30">
           - our awesome works -
         </p>
       </motion.div>
 
-      {/* Grid */}
-      <div
-        variants={fadeIn("up", 0.3)}
-        initial="hidden"
-        whileInView="show"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6"
+      <Swiper
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView="auto"
+        slideToClickedSlide={true}
+        onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+        }}
+        pagination={{ el: ".swiper-pagination", clickable: true }}
+        modules={[EffectCoverflow, Pagination]}
+        className="swiper-container relative py-8"
       >
-        {displayedItems.map((work, index) => (
-          <div
+        {worksData.map((w, index) => (
+          <SwiperSlide
             key={index}
-            className="group w-full max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 relative cursor-pointer"
-            onClick={() => {
-              setSelectedWork(work);
-              document.getElementById("worksModal").showModal();
-            }}
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
           >
             <motion.div
-              variants={fadeIn("up", 0.4)}
+              variants={textVariant(0.2)}
               initial="hidden"
               whileInView="show"
-              className="relative w-full aspect-[9/12]"
             >
               <img
-                src={work.image}
-                alt={`work-${index}`}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                src={w.image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-2xl object-cover"
               />
-              <div className="hidden md:block absolute bottom-0 inset-x-0 bg-[rgba(0,0,0,0.6)] text-white p-4 opacity-0 group-hover:opacity-100 text-center transition-all duration-300">
-                <h3 className="text-[#ffde01] text-base font-semibold">
-                  {work.title}
-                </h3>
-                <p className="text-xs">{work.subtitle}</p>
-              </div>
             </motion.div>
-            <div className="block md:hidden mt-2 text-center">
-              <h3 className="text-[#ffde01] text-lg font-semibold">
-                {work.title}
-              </h3>
-              <p className="text-sm">{work.subtitle}</p>
-            </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
 
-      {/* View More / View Less Button */}
-      {worksData.length > 3 && (
-        <div className="flex justify-center mt-6">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => setShowAllWorks((prev) => !prev)}
-            className="bg-[#ffde01] text-black text-base font-semibold px-6 py-3 rounded-[10px] hover:bg-yellow-400 transition-all duration-300"
-          >
-            {showAllWorks ? "View Less" : "View More"}
-          </motion.button>
-        </div>
+        <div className="swiper-pagination mt-4 text-center" />
+      </Swiper>
+      {/* Description Below Carousel */}
+      {worksData[activeIndex] && (
+        <motion.div
+          variants={textVariant(0.3)}
+          initial="hidden"
+          whileInView="show"
+          className="mt-6 text-center px-4"
+        >
+          <h2 className="text-white text-2xl font-semibold">
+            {worksData[activeIndex].title}
+          </h2>
+          <p className="text-white text-sm italic">
+            {worksData[activeIndex].subtitle}
+          </p>
+          <p className="text-white text-base mt-2">
+            {worksData[activeIndex].description}
+          </p>
+        </motion.div>
       )}
-
-      {/* Modal */}
-      <dialog id="worksModal" className="modal">
-        <div className="modal-box w-full max-w-3xl overflow-y-auto max-h-[80vh]">
-          <div className="text-center">
-            <h3 className="font-bold text-lg mb-2">{selectedWork?.title}</h3>
-            <p className="py-2">{selectedWork?.subtitle}</p>
-            <p className="pb-4">{selectedWork?.description}</p>
-          </div>
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center">
-            {selectedWork?.image && (
-              <img
-                src={selectedWork?.image}
-                alt="work"
-                className="w-full sm:w-[30%] object-cover rounded-md"
-              />
-            )}
-            {selectedWork?.image2 && (
-              <img
-                src={selectedWork?.image2}
-                alt="work2"
-                className="w-full sm:w-[30%] object-cover rounded-md"
-              />
-            )}
-            {selectedWork?.image3 && (
-              <img
-                src={selectedWork?.image3}
-                alt="work3"
-                className="w-full sm:w-[30%] object-cover rounded-md"
-              />
-            )}
-          </div>
-        </div>
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
     </section>
   );
 };

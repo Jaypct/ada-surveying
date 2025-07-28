@@ -32,7 +32,7 @@ const Hero = () => {
             variants={fadeIn("right", 0.2)}
             initial="hidden"
             whileInView="show"
-            className="bg-[#ffde01] p-3 mt-8 rounded-lg text-black"
+            className="bg-[#ffde01] w-1/2 p-3 mt-8 rounded-lg text-black"
           >
             <a href="#about">Learn more</a>
           </motion.button>
