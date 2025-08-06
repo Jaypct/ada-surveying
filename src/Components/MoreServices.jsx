@@ -223,6 +223,15 @@ const MoreServices = () => {
               >
                 {s.description}
               </motion.p>
+              <button
+                className="btn text-black m-auto w-[200px] mt-5 p-3 flex justify-center items-center bg-[#ffde01] rounded-lg border hover:bg-black hover:text-white hover:border-[#ffde01] transition-all duration-300 cursor-pointer"
+                onClick={() => {
+                  document.getElementById("my_modal_3").showModal();
+                  setSelectedService(s);
+                }}
+              >
+                Request a qoute
+              </button>
             </div>
           );
         })}

@@ -22,11 +22,10 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { EffectCoverflow, Pagination } from "swiper/modules";
 
 import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
-import { div } from "framer-motion/m";
+import { textVariant } from "../utils/motion";
 
 const Works = () => {
   const worksData = [
