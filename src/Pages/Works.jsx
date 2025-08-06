@@ -180,13 +180,13 @@ const Works = () => {
           whileInView="show"
           className="mt-6 text-center px-4"
         >
-          <h2 className="text-white text-2xl font-semibold">
+          <h2 className="text-black dark:text-white text-2xl font-semibold">
             {worksData[activeIndex].title}
           </h2>
-          <p className="text-white text-sm italic">
+          <p className="text-black dark:text-white text-sm italic">
             {worksData[activeIndex].subtitle}
           </p>
-          <p className="text-white text-base mt-2">
+          <p className="text-black dark:text-white text-base mt-2">
             {worksData[activeIndex].description}
           </p>
         </motion.div>
