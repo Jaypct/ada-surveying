@@ -105,7 +105,7 @@ const Services = () => {
           whileTap={{ scale: 0.95 }}
           className="text-black m-auto w-10/12 sm:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 p-3 flex justify-center items-center bg-[#ffde01] rounded-lg border hover:bg-black hover:text-white hover:border-[#ffde01] transition-color duration-300 cursor-pointer"
           onClick={() => {
-            navigate("/more-services");
+            window.open("/more-services");
           }}
         >
           More Services

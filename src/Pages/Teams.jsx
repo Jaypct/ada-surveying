@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import img3 from "../assets/team/1.jpg";
-import img7 from "../assets/team/2.jpg";
-import img4 from "../assets/team/3.jpg";
-import img2 from "../assets/team/4.jpg";
-import img5 from "../assets/team/5.jpg";
-import img6 from "../assets/team/6.jpg";
+import img3 from "../assets/team/tata.jpg";
+import img7 from "../assets/team/josh.jpg";
+import img4 from "../assets/team/macky.jpg";
+import img2 from "../assets/team/belle.jpg";
+import img5 from "../assets/team/jacob.jpg";
+import img6 from "../assets/team/ker.jpg";
+import img8 from "../assets/team/rovic.jpg";
 import modalImg4 from "../assets/team/modal4.jpg";
 import modalImg5 from "../assets/team/modal5.png";
 import modalImg6 from "../assets/team/modal6.png";
@@ -108,6 +109,20 @@ With a strong commitment to precision, regulatory adherence, and technical integ
       twitterLink: "https://www.twitter.com",
       linkedinLink: "https://www.linkedin.com",
       name: "Joshua R. Sibongga",
+      designation: "Survey Aide",
+      description: `     Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
+    
+    Known for her analytical thinking and strong sense of initiative, Ms. Dionela has proven to be an effective support figure within the team. She is involved in data processing, report generation, and the preparation of survey documentation, playing a quiet yet essential role in the technical and operational workflow.
+    
+   She earned her Bachelor of Science degree in Computer Science from Silay Institute Inc. in Silay City, Negros Occidental, and graduated in 2024 with distinction as a Cum Laude and a consistent Dean’s Lister, demonstrating a strong academic foundation and a commitment to excellence that she now brings to her professional work. `,
+    },
+    {
+      id: 8,
+      image: img8,
+      modalImage: img7,
+      twitterLink: "https://www.twitter.com",
+      linkedinLink: "https://www.linkedin.com",
+      name: "Rovic John Agura",
       designation: "Survey Aide",
       description: `     Nirabelle P. Dionela joined the company in September 2024 and has since become a vital part of its administrative operations. As the Administrative Officer, she plays a key role in managing the day-to-day office activities—coordinating internal tasks, maintaining essential records, supporting the staff, and ensuring a well-organized and productive work environment. She works closely with clients and project leads to make sure that all administrative requirements are met, contributing to the smooth execution of both in-office and field-related projects. Her logistical responsibilities include managing internal resources and ensuring that all necessary supplies and equipment are efficiently allocated and readily available.
     

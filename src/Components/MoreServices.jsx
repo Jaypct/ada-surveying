@@ -164,7 +164,7 @@ const MoreServices = () => {
     },
   ];
   return (
-    <section id="services" className="p-10">
+    <section id="services" className="p-6 overflow-hidden">
       <Toaster />
       <motion.div
         variants={textVariant(0.2)}

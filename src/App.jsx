@@ -21,10 +21,10 @@ const App = () => {
         <Route
           path="/more-services"
           element={
-            <Layout>
+            <>
               <ScrollToTop />
               <MoreServices />
-            </Layout>
+            </>
           }
         />
       </Routes>
