@@ -8,7 +8,7 @@ import veriimage from "../assets/works/veri.png";
 import topoimage from "../assets/works/topo.png";
 import alignmentimage from "../assets/works/alignment.png";
 import controlimage from "../assets/works/control.png";
-import hydroimage from "../assets/works/hydro.png";
+import hydroimage from "../assets/works/hydro.jpg";
 import viciimage from "../assets/works/vici.png";
 import roadimage from "../assets/works/road.png";
 import denrimage from "../assets/works/denr.png";
