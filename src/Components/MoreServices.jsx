@@ -39,10 +39,10 @@ const MoreServices = () => {
     setLoading(true);
     emailjs
       .sendForm(
-        "service_mysu3wd", // Your EmailJS service ID
-        "template_0swp5je", // Your EmailJS template ID
+        "service_0scshf2", // Your EmailJS service ID
+        "template_x73joo5", // Your EmailJS template ID
         formRef.current,
-        "yN4z9qhMnunLtMEIz" // Your EmailJS public key
+        "LSnnBdCS2Mk2F2H5h" // Your EmailJS public key
       )
       .then(
         (result) => {
