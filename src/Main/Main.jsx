@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../Pages/Hero";
-import About from "../Pages/About1";
+import About from "../Pages/About";
 import Services from "../Pages/Services";
 import Works from "../Pages/Works";
 import Teams from "../Pages/Teams";
@@ -15,19 +15,19 @@ const Main = () => {
         <Hero />
       </section>
       <div className="slider-container w-full m-auto overflow-x-hidden md:p-30">
-        <section className="min-h-screen ">
+        <section className=" ">
           <About />
         </section>
-        <section className="min-h-screen ">
+        <section className=" ">
           <Services />
         </section>
-        <section className="min-h-screen ">
+        <section className=" ">
           <Works />
         </section>
-        <section className="min-h-screen ">
+        <section className=" ">
           <Teams />
         </section>
-        <section className="min-h-screen ">
+        <section className=" ">
           <Contact />
         </section>
       </div>

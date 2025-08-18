@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { BsFillPuzzleFill, BsFillHouseFill } from "react-icons/bs";
-import { FaSearch, FaTools } from "react-icons/fa";
+import { FaSearch, FaTools, FaArrowLeft } from "react-icons/fa";
 import { FaMountainSun, FaLocationDot } from "react-icons/fa6";
 import { IoCheckboxOutline, IoAirplaneSharp } from "react-icons/io5";
 import { GiBigWave, GiDeliveryDrone } from "react-icons/gi";
@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import MapComponent from "../Sample/MapComponent";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useNavigate } from "react-router-dom";
 
 const notifySucess = () => toast.success("Sent Successfully!");
 const notifyError = () => toast.error("Failed to send message.");
@@ -29,33 +30,55 @@ const MoreServices = () => {
     message: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs
-      .sendForm(
-        "service_0scshf2", // Your EmailJS service ID
-        "template_x73joo5", // Your EmailJS template ID
-        formRef.current,
-        "LSnnBdCS2Mk2F2H5h" // Your EmailJS public key
-      )
-      .then(
-        (result) => {
-          notifySucess();
-          formRef.current.reset();
-          setLoading(false);
-          document.getElementById("my_modal_3").close();
-        },
-        (error) => {
-          notifyError();
-          setLoading(false);
-        }
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      cel_num: form.number,
+      selectedServices: form.selectedServices,
+      message: form.message,
+    };
+
+    try {
+      // Gmail 1
+      await emailjs.send(
+        "service_0scshf2",
+        "template_bl1tsre",
+        { ...templateParams, source: "Gmail1" }, // unique field
+        "LSnnBdCS2Mk2F2H5h"
       );
+
+      // Gmail 2
+      await emailjs.send(
+        "service_x7bj6k8",
+        "template_g3t95e4",
+        { ...templateParams, source: "Gmail2" }, // unique field
+        "8gX53qbN5t2Ats8Mw"
+      );
+
+      notifySuccess();
+      setForm({
+        name: "",
+        email: "",
+        cel_num: "",
+        selectedServices: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      notifyError();
+    } finally {
+      setLoading(false);
+    }
   };
 
   const serviceData = [
@@ -164,8 +187,15 @@ const MoreServices = () => {
     },
   ];
   return (
-    <section id="services" className="p-6 overflow-hidden">
+    <section id="services" className="p-6 overflow-hidden relative">
       <Toaster />
+
+      <button
+        onClick={() => navigate("/", { state: { scrollTo: "#services" } })}
+        className="absolute top-10 left-4 z-50 bg-[#ffde01] p-3 rounded-full shadow-lg text-black hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+      >
+        <FaArrowLeft size={20} />
+      </button>
       <motion.div
         variants={textVariant(0.2)}
         initial="hidden"

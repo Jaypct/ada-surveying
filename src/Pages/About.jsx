@@ -5,87 +5,107 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const About = () => {
   return (
-    <section id="about" className="-scroll-mt-24 px-6 py-8">
+    <section
+      id="about"
+      className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center -scroll-mt-24"
+    >
+      {/* Left: Image (full cover) */}
       <motion.div
-        variants={textVariant(0.3)}
+        variants={fadeIn("right", 0.5)}
         initial="hidden"
         whileInView="show"
-        className="flex flex-col justify-center items-center text-center "
+        className="relative w-full lg:w-1/2 min-h-[300px] flex items-start justify-center"
       >
-        <h1 className="text-3xl md:text-4xl font-bold mt-10">About Us</h1>
-        <p className="text-lg text-black dark:text-white">
-          Learn more about us
-        </p>
+        <img
+          src={aboutImg}
+          alt="about"
+          className="object-contain max-w-[80%] max-h-[70vh] mt-10 rounded-lg"
+        />
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl m-auto p-6">
-        {/* Text Block */}
-        <motion.div
-          variants={fadeIn("right", 0.3)}
-          initial="hidden"
-          whileInView="show"
-          className="w-full"
-        >
-          <p className="text-justify text-base md:text-lg leading-relaxed">
-            <strong>ADA Land Surveying Services</strong> is a licensed and
-            dynamic surveying firm founded in 2022 in Silay City, Negros
-            Occidental.
-            <br />
-            With a commitment to accuracy, client trust, and technological
-            advancement, ADA has steadily built a reputation among real estate
-            developers, government agencies, contractors, and private landowners
-            across the Philippines.
-            <br />
-            We provide fast, reliable, and cost-efficient surveying solutions
-            that help clients make better decisions, stay compliant, and keep
-            their projects on track.
-          </p>
-        </motion.div>
+      {/* Right: Content */}
+      <div className="relative w-full lg:w-1/2 flex flex-col justify-start px-6 py-10 md:py-0 overflow-hidden">
+        <div className="relative z-10 flex flex-col h-full justify-start mt-10">
+          <motion.h1
+            variants={textVariant(0.3)}
+            initial="hidden"
+            whileInView="show"
+            className="text-3xl md:text-4xl font-bold mb-2 text-black dark:text-white text-center"
+          >
+            About Us
+          </motion.h1>
+          <motion.h2
+            variants={textVariant(0.3)}
+            initial="hidden"
+            whileInView="show"
+            className="text-2xl md:text-3xl font-semibold mb-4 text-black dark:text-white text-center"
+          >
+            Learn more about us
+          </motion.h2>
+          <motion.div
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            whileInView="show"
+            className="flex justify-center"
+          >
+            <p className="text-base md:text-lg leading-relaxed mb-6 text-black dark:text-white text-center max-w-2xl">
+              ADA Land Surveying Services is a licensed and dynamic surveying
+              firm founded in 2022 in Silay City, Negros Occidental. With a
+              commitment to accuracy, client trust, and technological
+              advancement, ADA has steadily built a reputation among real estate
+              developers, government agencies, contractors, and private
+              landowners across the Philippines. We provide fast, reliable, and
+              cost-efficient surveying solutions that help clients make better
+              decisions, stay compliant, and keep their projects on track.
+            </p>
+          </motion.div>
 
-        {/* Image Block */}
-        <motion.div
-          variants={fadeIn("left", 0.3)}
-          initial="hidden"
-          whileInView="show"
-          className="w-full flex justify-center"
-        >
-          <img
-            src={aboutImg}
-            alt="about"
-            className="w-full max-w-md h-auto rounded-2xl object-cover"
-          />
-        </motion.div>
+          {/* Vision + Mission */}
+          <div className="flex flex-col md:flex-row gap-6 mt-8 justify-center items-stretch text-center">
+            {/* Vision */}
+            <motion.div
+              variants={fadeIn("right", 0.5)}
+              initial="hidden"
+              whileInView="show"
+              className="flex-1 bg-transparent flex flex-col"
+            >
+              <h3 className="font-bold text-lg mb-1 text-black dark:text-white text-center">
+                Our Vision
+              </h3>
+              <p className="text-black dark:text-white text-base leading-relaxed text-center">
+                To become the go-to land surveying partner in the Philippines,
+                trusted for innovative solutions, effective communication, and
+                delivering sharp results every time.
+              </p>
+            </motion.div>
 
-        {/* Vision */}
-        <motion.div
-          className="w-full"
-          variants={fadeIn("right", 0.4)}
-          initial="hidden"
-          whileInView="show"
-        >
-          <h2 className="text-xl font-semibold mb-2">Our Vision</h2>
-          <p className="text-base leading-relaxed">
-            To become the go-to land surveying partner in the Philippines,
-            trusted for innovative solutions, effective communication, and
-            delivering sharp results every time.
-          </p>
-        </motion.div>
+            {/* Divider */}
+            <motion.div
+              variants={fadeIn("up", 0.5)}
+              initial="hidden"
+              whileInView="show"
+              className="hidden md:block w-px bg-black dark:bg-white/30 mx-2 self-stretch"
+            ></motion.div>
 
-        {/* Mission */}
-        <motion.div
-          variants={fadeIn("left", 0.4)}
-          initial="hidden"
-          whileInView="show"
-          className="w-full"
-        >
-          <h2 className="text-xl font-semibold mb-2">Our Mission</h2>
-          <p className="text-base leading-relaxed">
-            To deliver smart, precise, and dependable geospatial services by
-            leveraging modern tools, upholding professional integrity, and
-            fostering flexible, collaborative relationships that align with
-            client timelines and success.
-          </p>
-        </motion.div>
+            {/* Mission */}
+            <motion.div
+              variants={fadeIn("left", 0.5)}
+              initial="hidden"
+              whileInView="show"
+              className="flex-1 bg-transparent flex flex-col"
+            >
+              <h3 className="font-bold text-lg mb-1 text-black dark:text-white text-center">
+                Our Mission
+              </h3>
+              <p className="text-black dark:text-white text-base leading-relaxed text-center">
+                To deliver smart, precise, and dependable geospatial services by
+                leveraging modern tools, upholding professional integrity, and
+                fostering flexible, collaborative relationships that align with
+                client timelines and success.
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

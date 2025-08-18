@@ -41,7 +41,7 @@ const Contact = () => {
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -50,24 +50,61 @@ const Contact = () => {
     }
     setLoading(true);
 
-    emailjs
-      .sendForm(
-        "service_0scshf2", // Replace with your EmailJS service ID
-        "template_bl1tsre", // Replace with your EmailJS template ID
-        formRef.current, // Form element
-        "LSnnBdCS2Mk2F2H5h" // Replace with your EmailJS public key
-      )
-      .then(
-        (result) => {
-          notifySucess();
-          formRef.current.reset(); // optional: clear form
-          setLoading(false);
-        },
-        (error) => {
-          notifyError();
-          setLoading(false); // End loading
-        }
+    // emailjs
+    //   .sendForm(
+    //     "service_0scshf2", // Replace with your EmailJS service ID
+    //     "template_bl1tsre", // Replace with your EmailJS template ID
+    //     formRef.current, // Form element
+    //     "LSnnBdCS2Mk2F2H5h" // Replace with your EmailJS public key
+    //   )
+    //   .then(
+    //     (result) => {
+    //       notifySucess();
+    //       formRef.current.reset(); // optional: clear form
+    //       setLoading(false);
+    //     },
+    //     (error) => {
+    //       notifyError();
+    //       setLoading(false); // End loading
+    //     }
+    //   );
+    const templateParams = {
+      user_name: form.user_name,
+      user_email: form.user_email,
+      cel_number: form.cel_number,
+      message: form.message,
+    };
+
+    try {
+      // Gmail 1
+      await emailjs.send(
+        "service_0scshf2",
+        "template_bl1tsre",
+        { ...templateParams, source: "Gmail1" }, // unique field
+        "LSnnBdCS2Mk2F2H5h"
       );
+
+      // Gmail 2
+      await emailjs.send(
+        "service_x7bj6k8",
+        "template_g3t95e4",
+        { ...templateParams, source: "Gmail2" }, // unique field
+        "8gX53qbN5t2Ats8Mw"
+      );
+
+      notifySuccess();
+      setForm({
+        user_name: "",
+        user_email: "",
+        cel_number: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      notifyError();
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <section id="contact" className=" px-6">
